@@ -1,11 +1,19 @@
 <template>
     <div>
-        <div class="row">
+        <div v-if="legend" class="row">
             <div class="col-4">
                 <h3>{{ title }}</h3>
             </div>
             <div class="col-4"></div>
             <div class="col-4">
+                <div class="text-right"><a href="#">Mais Detalhes</a></div>
+            </div>
+        </div>
+        <div v-else="legend" class="row">
+            <div class="col-6">
+                <h3>{{ title }}</h3>
+            </div>
+            <div class="col-6">
                 <div class="text-right"><a href="#">Mais Detalhes</a></div>
             </div>
         </div>
@@ -25,12 +33,13 @@ export default{
     data () {
         return {
             foo:'bar',
-            legendChart: legend,
+            legendChart: null,
             chartOptions: {
                 chart: {
                 title: 'Company Performance',
                 subtitle: 'Sales, Expenses, and Profit: 2014-2017',
                 },
+                legend: this.legend? this.legend: {position: 'none'}, 
             }
         }
     },

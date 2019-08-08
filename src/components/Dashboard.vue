@@ -9,7 +9,7 @@
         <div class="my-2">
             <div class="row my-3">
                 <div class="col-6">
-                    <ColumnChart :title="chart1.title" :chartData="chart1.chartData" />
+                    <ColumnChart :title="chart1.title" :chartData="chart1.chartData" :legend="{position: 'right'}"/>
                 </div>
                 <div class="col-6">
                     <ColumnChart :title="chart2.title" :chartData="chart2.chartData" />
