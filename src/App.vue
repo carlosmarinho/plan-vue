@@ -3,7 +3,7 @@
     <Header></Header>
     <div class="container">
       <TitleBar></TitleBar>
-      <Dashboard></Dashboard>
+      <Dashboard />
     </div>
   </div>
 </template>
