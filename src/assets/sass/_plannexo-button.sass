@@ -1,0 +1,55 @@
+.pln-btn
+  font-weight: $font-weight-regular
+  font-size: $font-size-text
+  line-height: $line-height-md
+  display: inline-block
+  text-align: center
+  white-space: nowrap
+  vertical-align: middle
+  padding: .375rem .75rem
+  border: 1px solid transparent
+  @include border-radius()
+  @include css3-prefix(user-select, none)
+  &:hover
+    cursor: pointer
+  &:focus
+    outline: none
+
+.pln-btn-primary
+  color: $color-neutral-white
+  background-color: $color-primary
+  &:focus
+    background-color: $color-primary
+  &:hover
+    background-color: $color-primary-dark
+  &:active
+    background-color: $color-primary-dark
+
+.pln-btn-disable
+  color: $color-neutral
+  background-color: $color-neutral-ultra-light
+  border: 1px solid $color-neutral-ultra-light
+  pointer-events: none
+
+.pln-btn-outline-primary
+  color: $color-primary
+  background-color: $color-neutral-white
+  border: 1px solid $color-primary
+  &:focus
+    color: $color-primary
+    background-color: $color-neutral-white
+    border: 1px solid $color-primary
+  &:hover
+    color: $color-neutral-white
+    background-color: $color-primary
+    border: 1px solid $color-primary
+  &:active
+    color: $color-neutral-white
+    background-color: $color-primary-dark
+    border: 1px solid $color-primary-dark
+
+.pln-btn-outline-disable
+  color: $color-neutral
+  background-color: $color-neutral-white
+  border: 1px solid $color-neutral
+  pointer-events: none
