@@ -1,0 +1,72 @@
+//Prefix
+@mixin css3-prefix($prop, $value)
+  -webkit-#{$prop}: #{$value}
+  -moz-#{$prop}: #{$value}
+  -ms-#{$prop}: #{$value}
+  -o-#{$prop}: #{$value}
+  #{$prop}: #{$value}
+
+//Custom div size
+@mixin pln-custom-card($width, $height, $color)
+  width: $width
+  height: $height
+  background-color: $color
+
+//Opacidade
+@mixin opacity($opacity)
+  opacity: $opacity
+  $opacity-ie: $opacity * 100
+  filter: alpha(opacity = $opacity-ie)
+
+//Clerfix
+@mixin clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+//Box shadow
+@mixin box-shadow($shadow-parameters)
+    -webkit-box-shadow: $shadow-parameters
+    -moz-box-shadow: $shadow-parameters
+    box-shadow: $shadow-parameters
+
+//Box Radius
+@mixin border-radius($radius: 4px)
+	border-radius: $radius
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius
+
+@mixin custom-border-radius($topleft, $topright, $bottomright, $bottomleft)
+	border-top-left-radius: $topleft
+	border-top-right-radius: $topright
+	border-bottom-right-radius: $bottomright
+	border-bottom-left-radius: $bottomleft
+	-webkit-border-top-left-radius: $topleft
+	-webkit-border-top-right-radius: $topright
+	-webkit-border-bottom-right-radius: $bottomright
+	-webkit-border-bottom-left-radius: $bottomleft
+	-moz-border-radius-topleft: $topleft
+	-moz-border-radius-topright: $topright
+	-moz-border-radius-bottomright: $bottomright
+	-moz-border-radius-bottomleft: $bottomleft
+
+//Mixin para Opacidade de cor
+@function colorOpacity($color, $opacity: 0.3)
+  $red: red($color)
+  $green: green($color)
+  $blue: blue($color)
+  @return rgba($red, $green, $blue, $opacity)
+
+//Mixin para Opacidade de cor
+@function colorHover($color)
+  $hue: hue($color)
+  $saturation: saturation($color) - 10
+  $lightness: lightness($color) - 10
+  @return hsl($hue, $saturation, $lightness)
+
+@function colorActive($color)
+  $hue: hue($color)
+  $saturation: saturation($color) - 5
+  $lightness: lightness($color) - 20
+  @return hsl($hue, $saturation, $lightness)

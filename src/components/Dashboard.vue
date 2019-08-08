@@ -1,6 +1,5 @@
 <template>
     <div>
-        DASHBOARD
         <FeaturedBar>
             <FeaturedItem />
             <FeaturedItem />
@@ -13,7 +12,7 @@
                     <Report />
                 </div>
                 <div class="col-6">
-                    <Report />
+                    <Report />s
                 </div>
             </div>
             <div class="row">
