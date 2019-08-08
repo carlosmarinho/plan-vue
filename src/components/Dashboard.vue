@@ -33,7 +33,7 @@
             </div>
             <div class="row my-3">
                 <div class="col-12">
-                    <ColumnChart :title="chart6.title" :chartData="chart6.chartData" />
+                    <ColumnChart :title="chart6.title" :chartData="chart6.chartData" :chartOptions="chart6.chartOptions" charType="area" />
                 </div>
             </div>
         </div>
@@ -41,13 +41,36 @@
 </template>
 
 <script>
+
+const globalTextOptions  = {
+            color: '#333333',
+            fontSize: 12,
+            fontName: 'Lato, sans-serif',
+            bold: false,
+            italic: false,
+        };
+
+const globalStockValue ={
+		type:'financialVolume',
+		period: 'monthly_urgency'
+	};
+
+const globalAnimation =  {
+		duration: 500,
+		easing: 'out',
+		startup: true
+	};
+
 import FeaturedBar from './FeaturedBar';
 import FeaturedItem from './FeaturedItem';
 import ColumnChart from './reports/ColumnChart';
 
+
 export default{
     name: 'Dashboard',
     data () {
+        
+
         return {
             firstname: 'UserFirstName1111',
             lastname: 'UserLastName',
@@ -55,11 +78,9 @@ export default{
             chart1:{
                 title: 'Valor Estoque',
                 chartData: [
-                    ['Year', 'Sales', 'Expenses', 'Profit'],
-                    ['2014', 1000, 400, 200],
-                    ['2015', 1170, 460, 250],
-                    ['2016', 660, 1120, 300],
-                    ['2017', 1030, 540, 350]
+                    ['Valores em Reais', 'Disponivel', 'Total'],
+                    [17087, 660, 550  ],
+                    [2019, 1030, 10000]
                 ],
             },
             chart2:{
@@ -111,6 +132,38 @@ export default{
                     ['2016', 660, 1120, 300],
                     ['2017', 1030, 540, 350]
                 ],
+                chartOptions: {
+                    tooltip: {isHtml: true},
+                    animation: globalAnimation,
+                    height: '350',
+                    pointSize: 5,
+                    dataOpacity: 0.5,
+                    colors:['#29859A', '#F96737'],
+                    chartArea: {
+                        width: '100%',
+                        left: 120,
+                        right: 50,
+                    },
+                    legend: { 
+                        position: 'top', 
+                        alignment: 'center',
+                        textStyle: globalTextOptions,
+                    },
+                    hAxis: {
+                        textStyle: globalTextOptions,
+                    },
+                    vAxis: {
+                        title: 'ADERÊNCIA (%)',
+                        titleTextStyle: globalTextOptions,
+                        textStyle: {...globalTextOptions, color: '#888888'},
+                        viewWindow: {
+                            min: 0,
+                            max: 100
+                        },
+                    },
+                    /*seriesType: 'area',*/
+                    series: {1: {type: 'line'}}
+                }
             },
         }
     },

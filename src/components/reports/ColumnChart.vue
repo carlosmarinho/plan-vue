@@ -18,7 +18,7 @@
             </div>
         </div>
         <GChart
-            type="ColumnChart"
+            :type="chartType"
             :data="chartData"
             :options="chartOptions"
         />
@@ -29,12 +29,12 @@
 import { GChart } from 'vue-google-charts'
 export default{
     name: 'ColumnChart',
-    props: ['title', 'lastname', 'chartData', 'legend'],
+    props: ['title', 'lastname', 'chartData', 'chartOptions', 'legend', 'charType'],
     data () {
         return {
-            foo:'bar',
+            chartType: this.type? this.type : 'ColumnChart',
             legendChart: null,
-            chartOptions: {
+            chartOptions: this.chartOptions? this.chartOptions : {
                 chart: {
                 title: 'Company Performance',
                 subtitle: 'Sales, Expenses, and Profit: 2014-2017',
@@ -43,6 +43,7 @@ export default{
             }
         }
     },
+    
     components: {
         GChart
     }
