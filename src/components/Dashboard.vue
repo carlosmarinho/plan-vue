@@ -65,7 +65,7 @@ const globalAnimation =  {
 import FeaturedBar from './FeaturedBar';
 import FeaturedItem from './FeaturedItem';
 import ColumnChart from './reports/ColumnChart';
-
+import SearchBar from './SearchBar';
 
 export default{
     name: 'Dashboard',
@@ -256,6 +256,7 @@ export default{
         FeaturedBar,
         FeaturedItem,
         ColumnChart,
+        SearchBar
     }
 }
 </script>

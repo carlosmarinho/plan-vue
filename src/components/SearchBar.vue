@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import { router } from '../main';
+
 export default {
     name: 'SearchBar',
     data() {
@@ -31,6 +33,8 @@ export default {
         onSubmit: function() {
             console.log("formulario: ", this.form.filtro1 );
             console.log("event: ", this.search);
+
+            router.push('/sku')
         }
     }
 };
@@ -40,6 +44,4 @@ export default {
     .title-bar{
         min-height: 100px;
     }
-
 </style>
-
