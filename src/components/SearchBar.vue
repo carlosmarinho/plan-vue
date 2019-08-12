@@ -22,12 +22,14 @@
 
 <script>
 export default {
-    name: 'TitleBar',
+    name: 'SearchBar',
     data() {
         return { search: 'teste',}
     },
+    props: [ 'form' ],
     methods: {
-        onSubmit: function(event) {
+        onSubmit: function() {
+            console.log("formulario: ", this.form.filtro1 );
             console.log("event: ", this.search);
         }
     }

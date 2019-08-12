@@ -1,5 +1,6 @@
 <template>
     <div>
+        <SearchBar></SearchBar>
         <FeaturedBar>
             <FeaturedItem />
             <FeaturedItem />
