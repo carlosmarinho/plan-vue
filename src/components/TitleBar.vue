@@ -5,7 +5,15 @@
                 <h2>Dashboard</h2>
             </div>
             <div class="col-6 text-right">
-                <h2>Filtros</h2>
+                <form v-on:submit="onSubmit" action="#">
+                    <div class="form-group row">
+                        <label for="filter" class="col-sm-6 col-form-label text-right">Meus Filtros</label>
+                        <div class="col-sm-6">
+                            <input type="text" id="filter" v-model="search" />
+                            <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
         <hr />
@@ -13,14 +21,23 @@
 </template>
 
 <script>
-export default{
-    name: 'TitleBar'
-}
+export default {
+    name: 'TitleBar',
+    data() {
+        return { search: 'teste',}
+    },
+    methods: {
+        onSubmit: function(event) {
+            console.log("event: ", this.search);
+        }
+    }
+};
 </script>
 
 <style scoped>
     .title-bar{
         min-height: 100px;
     }
+
 </style>
 

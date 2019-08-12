@@ -9,7 +9,7 @@
                 <div class="text-right"><a href="#">Mais Detalhes</a></div>
             </div>
         </div>
-        <div v-else="legend" class="row">
+        <div v-else class="row">
             <div class="col-6">
                 <h3>{{ title }}</h3>
             </div>
@@ -29,12 +29,12 @@
 import { GChart } from 'vue-google-charts'
 export default{
     name: 'ColumnChart',
-    props: ['title', 'lastname', 'chartData', 'chartOptions', 'legend', 'charType'],
+    props: ['title', 'lastname', 'chartData', 'options', 'legend', 'charType'],
     data () {
         return {
             chartType: this.type? this.type : 'ColumnChart',
             legendChart: null,
-            chartOptions: this.chartOptions? this.chartOptions : {
+            chartOptions: (this.options)? this.options : {
                 chart: {
                 title: 'Company Performance',
                 subtitle: 'Sales, Expenses, and Profit: 2014-2017',

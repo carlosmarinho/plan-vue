@@ -33,7 +33,7 @@
             </div>
             <div class="row my-3">
                 <div class="col-12">
-                    <ColumnChart :title="chart6.title" :chartData="chart6.chartData" :chartOptions="chart6.chartOptions" charType="area" />
+                    <ColumnChart :title="chart6.title" :chartData="chart6.chartData" :options="chart6.chartOptions" charType="area" />
                 </div>
             </div>
         </div>
@@ -50,10 +50,10 @@ const globalTextOptions  = {
             italic: false,
         };
 
-const globalStockValue ={
+/* const globalStockValue ={
 		type:'financialVolume',
 		period: 'monthly_urgency'
-	};
+	}; */
 
 const globalAnimation =  {
 		duration: 500,
@@ -125,13 +125,97 @@ export default{
             },
             chart6:{
                 title: 'Relatório 1',
-                chartData: [
-                    ['Year', 'Sales', 'Expenses', 'Profit'],
-                    ['2014', 1000, 400, 200],
-                    ['2015', 1170, 460, 250],
-                    ['2016', 660, 1120, 300],
-                    ['2017', 1030, 540, 350]
-                ],
+                chartData: {"cols":
+                            [
+                                {"id":"","label":"Data","pattern":"","type":"string","p":{}},
+                                {"id":"","label":"Aprovações no Plannexo (%)","pattern":"","type":"number","p":{}},
+                                {"type":"string","role":"tooltip","p":{"html":true,"role":"tooltip"}},
+                                {"id":"","label":"Aprovações no ERP (%)","pattern":"","type":"number"},
+                                {"type":"string","role":"tooltip","p":{"html":true,"role":"tooltip"}}
+                            ],
+                            "rows":
+                            [
+                                {"c":
+                                    [{"v":"Ago/2018"},
+                                     {"v":0},
+                                     {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Ago/2018</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}},
+                                     {"v":0},
+                                     {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Ago/2018</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}}
+                                     ]
+                                },
+                                {"c":
+                                    [
+                                        {"v":"Set/2018"},
+                                        {"v":0},
+                                        {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Set/2018</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}},
+                                        {"v":0},
+                                        {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Set/2018</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}}]},{"c":[{"v":"Out/2018"},{"v":0},{"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Out/2018</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}},
+                                        {"v":0},
+                                        {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Out/2018</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}}
+                                    ]
+                                },
+                                {"c":[
+                                    {"v":"Nov/2018"},
+                                    {"v":0},
+                                    {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Nov/2018</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}},
+                                    {"v":0},
+                                    {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Nov/2018</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}}
+                                ]},
+                                {"c":[
+                                    {"v":"Dez/2018"},
+                                    {"v":0},
+                                    {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Dez/2018</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}},
+                                    {"v":0},
+                                    {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Dez/2018</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}}]},
+                                    {"c":[{"v":"Jan/2019"},
+                                    {"v":0},
+                                    {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Jan/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}},{"v":0},{"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Jan/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}}
+                                ]},
+                                {"c":[
+                                    {"v":"Fev/2019"},
+                                    {"v":0},
+                                    {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Fev/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}},
+                                    {"v":0},
+                                    {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Fev/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}}
+                                ]},
+                                {"c":[
+                                    {"v":"Mar/2019"},
+                                    {"v":0},
+                                    {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Mar/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}},{"v":0},{"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Mar/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}}
+                                ]},
+                                {"c":[
+                                    {"v":"Abr/2019"},
+                                    {"v":0},
+                                    {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Abr/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 100%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}},{"v":100},{"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Abr/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 100%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}}]},
+                                    {"c":[
+                                        {"v":"Mai/2019"},
+                                        {"v":0},
+                                        {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Mai/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 100%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}},
+                                        {"v":100},
+                                        {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Mai/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 100%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}}
+                                    ]},
+                                    {"c":[
+                                        {"v":"Jun/2019"},
+                                        {"v":0},
+                                        {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Jun/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 100%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}},
+                                        {"v":100},
+                                        {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Jun/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 100%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}}
+                                    ]},
+                                {"c":[
+                                    {"v":"Jul/2019"},
+                                    {"v":0},
+                                    {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Jul/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 100%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}},
+                                    {"v":100},
+                                    {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Jul/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 100%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}}
+                                    ]},
+                                {"c":[
+                                    {"v":"Ago/2019"},{"v":0},
+                                    {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Ago/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}},
+                                    {"v":0},
+                                    {"v":"<div class='p-2 pln-tooltip-chart' style='min-width:220px'>\n\t\t\t\t<div class='d-flex flex-column'>\n\t\t\t\t\t<span class='pln-tooltip-chart-bold'>Ago/2019</span>\n\t\t\t\t\t<hr class='pln-tooltip-chart-hr' >\n\t\t\t\t\t<span>Aprovações no Plannexo: 0%</span>\n\t\t\t\t\t<span>Aprovações no ERP: 0%</span>\n\t\t\t\t</div>\n\t\t\t</div>","p":{}}
+                                ]
+                            }
+                        ]},
                 chartOptions: {
                     tooltip: {isHtml: true},
                     animation: globalAnimation,

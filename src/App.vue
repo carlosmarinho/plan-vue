@@ -3,7 +3,7 @@
     <Header></Header>
     <div class="container-fluid">
       <TitleBar></TitleBar>
-      <Dashboard />
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -11,14 +11,12 @@
 <script>
 import Header from './components/Header';
 import TitleBar from './components/TitleBar';
-import Dashboard from './components/Dashboard';
 
 export default{
   name: 'App',
   components: {
     Header,
     TitleBar,
-    Dashboard,
   },
 }
 </script>
