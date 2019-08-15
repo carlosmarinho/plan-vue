@@ -1,5 +1,6 @@
 
-const descFormat = (value, key, item) => {
+/*const descFormat = (value, key, item) => {*/
+const descFormat = (value) => {
     if(value.lenght < 70){
         return value
     }
@@ -7,12 +8,8 @@ const descFormat = (value, key, item) => {
     return value.slice(0,70) + '...';
 }
 
-/* formatter: (value, key, item) => {
-              return value ? 'Yes' : 'No'
-            } */
-
-export default  [{ key: 'id', },
-{ key: 'statusSistema', },
+export default  [{ key: 'id', stickyColumn: true, isRowHeader: true, variant: 'primary' },
+{ key: 'statusSistema', stickyColumn: true, isRowHeader: true, variant: 'primary', class: 'text-nowrap' },
 { key: 'codItem', label: 'Código do Item', class: 'text-nowrap' },
 { key: 'descItem', class: 'text-nowrap', formatter: descFormat },
 { key: 'estab', class: 'text-nowrap' },

@@ -11,6 +11,8 @@ import VueGoogleCharts from 'vue-google-charts';
 import Dashboard from './components/Dashboard';
 import SkuFilter from './components/SkuFilter';
 import Sku from './components/Sku';
+import Suggestion from './components/Suggestion';
+
 
 
 Vue.use(VueRouter);
@@ -23,7 +25,8 @@ export const router = new VueRouter({
     { path: '/', component: Dashboard },
     { path: '/sku/filter', component: SkuFilter },
     /* { path: '/sku', component: Sku },*/
-    {path: "/sku", name:"sku", component: Sku,  props: true}
+    {path: "/sku", name:"sku", component: Sku,  props: true},
+    {path: "/suggest", name:"suggest", component: Suggestion,  props: true}
 
   ]
 })

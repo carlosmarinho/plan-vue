@@ -25,7 +25,6 @@
         </b-form-group>
       </b-col>
 
-skulist tamanho: {{ allSkus.length }}
         <!--b-table 
             sticky-header 
             :items="allSkus" 
@@ -52,6 +51,7 @@ skulist tamanho: {{ allSkus.length }}
         </b-pagination>
 
         <p class="mt-3">Current Page: {{ currentPage }}</p>
+        <p>skulist tamanho: {{ allSkus.length }}</p>
     </div>
 </template>
 
@@ -64,7 +64,7 @@ export default{
     props: ['params'],
     data() {
       return {
-        perPage: 10,
+        perPage: 30,
         sortBy: 'name',
         currentPage: 1,
         
