@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import store from './store';
 import App from './App';
 import BootstrapVue from 'bootstrap-vue'
 
@@ -21,12 +22,14 @@ export const router = new VueRouter({
   routes: [
     { path: '/', component: Dashboard },
     { path: '/sku/filter', component: SkuFilter },
-    { path: '/sku', component: Sku },
+    /* { path: '/sku', component: Sku },*/
+    {path: "/sku", name:"sku", component: Sku,  props: true}
 
   ]
 })
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')

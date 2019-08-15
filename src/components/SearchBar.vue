@@ -34,7 +34,8 @@ export default {
             console.log("formulario: ", this.form.filtro1 );
             console.log("event: ", this.search);
 
-            router.push('/sku')
+            //router.push('/sku')
+            router.push({ name: 'sku', params: this.form }) 
         }
     }
 };

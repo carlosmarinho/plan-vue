@@ -25,10 +25,19 @@
         </b-form-group>
       </b-col>
 
-        <b-table 
+skulist tamanho: {{ allSkus.length }}
+        <!--b-table 
             sticky-header 
-            :items="items" 
-            :fields="fields"
+            :items="allSkus" 
+            :fields="fileds"
+            :per-page="perPage"
+            :current-page="currentPage" 
+            head-variant="light"
+        -->
+        <b-table 
+            sticky-header="500px"
+            :items="allSkus"
+            :fields="fields" 
             :per-page="perPage"
             :current-page="currentPage" 
             head-variant="light"
@@ -47,43 +56,36 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
+import fields from '../assets/json/sku/'
+
 export default{
     name: 'Sku',
+    props: ['params'],
     data() {
       return {
         perPage: 10,
         sortBy: 'name',
         currentPage: 1,
-        fields: [
-            { key: 'heading 1', sortable: false },
-            { key: 'heading 2', sortable: true },
-            { key: 'heading 3', sortable: false },
-            { key: 'name', sortable: true }
-        ],
-        items: [
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell', 'name': 'carlos'},
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell' },
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell' },
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell' },
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell' },
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell' },
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell' },
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell' },
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell' },
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell' },
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell' },
-          { 'heading 1': 'table cell 15', 'heading 2': 'table cell', 'heading 3': 'table cell' },
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell', 'name': 'luiz carlos'},
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell', 'name': 'silva carlos'},
-          { 'heading 1': 'table cell', 'heading 2': 'table cell', 'heading 3': 'table cell', 'name': 'edu carlos'},
-        ]
+        
+        items: [],
+        fields,
       }
     },
     computed: {
+      ...mapGetters(['allSkus']),
       rows() {
-        return this.items.length
+        //return this.items.length
+        return this.allSkus.length;
       }
-    }
+    },
+    methods: mapActions(['fetchSkus']),
+    created() {
+      //console.log("criou o metodo...", this.$route.params);
+      this.fetchSkus();
+      //console.log("todas as skus", skuList);
+        
+    },
 }
 
 </script>
