@@ -11,7 +11,7 @@ const descFormat = (value) => {
 export default  [{ key: 'id', stickyColumn: true, isRowHeader: true, variant: 'primary' },
 { key: 'statusSistema', stickyColumn: true, isRowHeader: true, variant: 'primary', class: 'text-nowrap' },
 { key: 'codItem', label: 'Código do Item', class: 'text-nowrap' },
-{ key: 'descItem', class: 'text-nowrap', formatter: descFormat },
+{ key: 'descItem', class: 'text-nowrap', formatter: descFormat  },
 { key: 'estab', class: 'text-nowrap' },
 { key: 'valUnitario', class: 'text-nowrap' },
 { key: 'qtdFat', class: 'text-nowrap' },

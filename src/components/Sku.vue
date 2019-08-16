@@ -41,6 +41,11 @@
             :current-page="currentPage" 
             head-variant="light"
         >
+          <template slot="[descItem]" slot-scope="data">
+            <!-- `data.value` is the value after formatted by the Formatter -->
+            <div v-b-tooltip.hover :title="data.item.descItem">{{ data.value }}</div>
+            
+          </template>
         </b-table>
         <b-pagination
             v-model="currentPage"
@@ -52,6 +57,7 @@
 
         <p class="mt-3">Current Page: {{ currentPage }}</p>
         <p>skulist tamanho: {{ allSkus.length }}</p>
+
     </div>
 </template>
 
