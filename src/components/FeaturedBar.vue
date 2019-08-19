@@ -1,5 +1,5 @@
 <template>
-    <div id="featured-bar" class="mx-2">
+    <div id="featured-bar" class="my-3">
         <div class="row">
             <slot></slot>
         </div>
