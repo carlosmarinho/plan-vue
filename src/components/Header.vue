@@ -1,15 +1,15 @@
 <template>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="pos-f-t">
-            <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar pln-bg-color-primary d-flex justify-content-between">
+        <div class="d-flex justify-content-start">
+            <nav class="navbar pln-bg-color-primary">
                 <span class="navbar-toggler-icon"></span>
                 <span>MENU</span>
             </nav>
         </div>
-        <div class="container-fluid-nav text-center">
+        <div>
             <img src="../assets/logo-planexo-white.png" width="120" />
         </div>
-        <span class="navbar-text">
+        <span class="d-flex justify-content-end">
             <a  href="#">Sair</a>
         </span>
     </nav>

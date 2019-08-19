@@ -7,7 +7,7 @@
             <FeaturedItem />
             <FeaturedItem />
         </FeaturedBar>
-        <div class="my-2">
+        <div class="my-3">
             <div class="row my-3">
                 <div class="col-6">
                     <ColumnChart :title="chart1.title" :chartData="chart1.chartData" :legend="{position: 'right'}"/>
@@ -25,7 +25,7 @@
                 <div class="col-12">
                     <ColumnChart :title="chart4.title" :chartData="chart4.chartData" />
                 </div>
-            </div>           
+            </div>
 
             <div class="row my-3">
                 <div class="col-12">
