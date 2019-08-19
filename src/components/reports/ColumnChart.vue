@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="row">
+        <div v-if="legend" class="row">
             <div class="col-4">
                 <h3>{{ title }}</h3>
             </div>
@@ -9,8 +9,16 @@
                 <div class="text-right"><a href="#">Mais Detalhes</a></div>
             </div>
         </div>
+        <div v-else class="row">
+            <div class="col-6">
+                <h3>{{ title }}</h3>
+            </div>
+            <div class="col-6">
+                <div class="text-right"><a href="#">Mais Detalhes</a></div>
+            </div>
+        </div>
         <GChart
-            type="ColumnChart"
+            :type="chartType"
             :data="chartData"
             :options="chartOptions"
         />
@@ -21,19 +29,21 @@
 import { GChart } from 'vue-google-charts'
 export default{
     name: 'ColumnChart',
-    props: ['title', 'lastname', 'chartData', 'legend'],
+    props: ['title', 'lastname', 'chartData', 'options', 'legend', 'charType'],
     data () {
         return {
-            foo:'bar',
-            legendChart: legend,
-            chartOptions: {
+            chartType: this.type? this.type : 'ColumnChart',
+            legendChart: null,
+            chartOptions: (this.options)? this.options : {
                 chart: {
                 title: 'Company Performance',
                 subtitle: 'Sales, Expenses, and Profit: 2014-2017',
                 },
+                legend: this.legend? this.legend: {position: 'none'}, 
             }
         }
     },
+    
     components: {
         GChart
     }
