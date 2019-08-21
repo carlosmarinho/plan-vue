@@ -1,6 +1,6 @@
 <template>
     <div>
-        <SearchBar :form="form" formAction="/ku"></SearchBar>
+        <SearchBar :form="form"  formAction="suggest"></SearchBar>
 
         <div class="row">
             <div class="card col-4" >
@@ -47,7 +47,7 @@
 import SearchBar from './SearchBar';
 
 export default{
-    name: 'SkuFilter',
+    name: 'SuggestFilter',
     components: {
         SearchBar
     },

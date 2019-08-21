@@ -10,7 +10,7 @@ const getters = {
 };
 
 const actions = {
-    async fetchSkus({commit}){
+    async fetchSkus({ commit }){
         const response = await api.fetchSkus();
         commit('setSkus', response.data);
     }
