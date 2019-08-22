@@ -73,9 +73,8 @@ export default{
         perPage: 30,
         sortBy: 'name',
         currentPage: 1,
-        
         items: [],
-        fields,
+        fields: fields
       }
     },
     computed: {

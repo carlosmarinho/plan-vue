@@ -28,14 +28,14 @@ export default {
     data() {
         return { search: 'teste',}
     },
-    props: [ 'form' ],
+    props: [ 'form', 'formAction' ],
     methods: {
         onSubmit: function() {
             console.log("formulario: ", this.form.filtro1 );
             console.log("event: ", this.search);
 
             //router.push('/sku')
-            router.push({ name: 'sku', params: this.form }) 
+            router.push({ name: this.formAction, params: this.form }) 
         }
     }
 };
