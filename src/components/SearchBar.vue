@@ -4,14 +4,12 @@
             <div class="col-6">
                 <h2>Dashboard</h2>
             </div>
-            <div class="col-6 text-right">
-                <form v-on:submit="onSubmit" action="#">
-                    <div class="form-group row">
-                        <label for="filter" class="col-sm-6 col-form-label text-right">Meus Filtros</label>
-                        <div class="col-sm-6">
-                            <input type="text" id="filter" v-model="search" />
-                            <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
-                        </div>
+            <div class="col-6">
+                <form v-on:submit="onSubmit" action="#" class="form-inline justify-content-end">
+                    <div class="form-group">
+                        <label for="filter" class="col-form-label">Meus Filtros</label>
+                        <input type="text" id="filter" class="pln-form-control form-control ml-2" v-model="search" />
+                        <button type="submit" class="pln-btn pln-btn-primary ml-1">Pesquisar</button>
                     </div>
                 </form>
             </div>
