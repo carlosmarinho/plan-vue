@@ -40,6 +40,9 @@
             :per-page="perPage"
             :current-page="currentPage" 
             head-variant="light"
+            :filter="filter"
+            :filterIncludedFields="filterOn"
+            @filtered="onFiltered"
         >
           <template slot="[descItem]" slot-scope="data">
             <!-- `data.value` is the value after formatted by the Formatter -->
@@ -71,12 +74,32 @@
                 perPage: 30,
                 sortBy: 'name',
                 currentPage: 1,
+                sortDesc: false,
+                sortDirection: 'asc',
+                filter: null,
+                filterOn: [],
             }
         },
         computed: {
             rows() {
                 //return this.items.length
                 return this.items.length;
+            }
+        },
+        methods: {
+            info(item, index, button) {
+                this.infoModal.title = `Row index: ${index}`
+                this.infoModal.content = JSON.stringify(item, null, 2)
+                this.$root.$emit('bv::show::modal', this.infoModal.id, button)
+            },
+            resetInfoModal() {
+                this.infoModal.title = ''
+                this.infoModal.content = ''
+            },
+            onFiltered(filteredItems) {
+                // Trigger pagination to update the number of buttons/pages due to filtering
+                this.totalRows = filteredItems.length
+                this.currentPage = 1
             }
         }
     }
